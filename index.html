@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Play</title>
+    <link rel="shortcut icon" href="assets/TATAPLAYICON.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="mainFrame">
+        <div id="logoFrame"></div>
+        <input type="number" id="channelNumberEntry" placeholder="Enter channel number" oninput="manageLinks()" min="100" max="9999">
+        <div id="addDropLinks">
+            <a href="" id="addLink" class="link">ADD CHANNEL</a>
+            <a href="" id="dropLink" class="link">DROP CHANNEL</a>
+        </div>
+    </div>
+    <script defer>
+        function manageLinks(){
+            document.getElementById('addLink').setAttribute("href",`https://api.whatsapp.com/send/?phone=%2B9118002086633&text=ADD+${document.getElementById('channelNumberEntry').value}&app_absent=0`);
+            document.getElementById('dropLink').setAttribute("href",`https://api.whatsapp.com/send/?phone=%2B9118002086633&text=DROP+${document.getElementById('channelNumberEntry').value}&app_absent=0`);
+            
+            document.getElementById('addLink').innerText=`ADD CHANNEL ${document.getElementById('channelNumberEntry').value}`;
+            document.getElementById('dropLink').innerText=`DROP CHANNEL ${document.getElementById('channelNumberEntry').value}`;
+        };
+        if(window.innerWidth>700){
+            document.querySelector('body').style.visibility='collapse';
+        }
+        else{
+            document.querySelector('body').style.visibility='visible';
+        };
+        window.addEventListener('resize',()=>{
+            if(window.innerWidth>700){
+                document.querySelector('body').style.visibility='collapse';
+            }
+            else{
+                document.querySelector('body').style.visibility='visible';
+            };
+        });
+    </script>
+</body>
+</html>

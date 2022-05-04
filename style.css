@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width:700px) {
+
+    body{
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(45deg, rgb(73, 236, 209), rgb(57, 215, 236));
+    }
+
+    #mainFrame{
+        width: 80%;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        /* background: linear-gradient(-45deg, rgba(57, 215, 236, 0.35), rgba(73, 236, 209, 0.35)); */
+        border-radius: 20px;
+    }
+
+    #logoFrame{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: url("assets/TATAPLAYICON.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+
+    #channelNumberEntry{
+        text-align: center;
+        padding: 2%;
+        width: 80%;
+        font-family: 'Times New Roman', Times, serif;
+        font-style: oblique;
+        font-size: 1.25pc;
+        color: #000;
+        background: whitesmoke;
+        outline: 0;
+        border: 0;
+        font-weight: bolder;
+        padding: 5% 0;
+    }
+
+    #channelNumberEntry::placeholder{
+        font-weight: normal;
+    }
+
+    #addDropLinks{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .link{
+        text-decoration: none;
+        color: white;
+        background: #e20092;
+        width: 100%;
+        text-align: center;
+        margin: 3% 0;
+        font-size: 1.5pc;
+        font-style: italic;
+        padding: 3% 0;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+
+    .link:active{
+        background: white;
+        color: #e20092;
+    }
+}
