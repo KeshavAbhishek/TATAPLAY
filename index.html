@@ -11,20 +11,34 @@
 <body>
     <div id="mainFrame">
         <div id="logoFrame"></div>
-        <input type="number" id="channelNumberEntry" placeholder="Enter channel number" oninput="manageLinks()" min="100" max="9999">
+        <input type="number" id="channelNumberEntry" placeholder="Enter channel number" min="100" max="9999">
+        <div id="keypadFrame" style="display: none;">
+            <div id="keypadFrame-1" class="keypadFrameChild">
+                <div class="numbers">1</div>
+                <div class="numbers">2</div>
+                <div class="numbers">3</div>
+            </div>
+            <div id="keypadFrame-2" class="keypadFrameChild">
+                <div class="numbers">4</div>
+                <div class="numbers">5</div>
+                <div class="numbers">6</div>
+            </div>
+            <div id="keypadFrame-3" class="keypadFrameChild">
+                <div class="numbers">7</div>
+                <div class="numbers">8</div>
+                <div class="numbers">9</div>
+            </div>
+            <div id="keypadFrame-4" class="keypadFrameChild">
+                <div onclick="removeOne()">X</div>
+                <div class="numbers">0</div>
+                <div onclick="clearAll()">C</div>
+            </div>
+        </div>
         <div id="addDropLinks">
             <a href="" id="addLink" class="link">ADD CHANNEL</a>
             <a href="" id="dropLink" class="link">DROP CHANNEL</a>
         </div>
     </div>
-    <script defer>
-        function manageLinks(){
-            document.getElementById('addLink').setAttribute("href",`https://api.whatsapp.com/send/?phone=%2B9118002086633&text=ADD+${document.getElementById('channelNumberEntry').value}&app_absent=0`);
-            document.getElementById('dropLink').setAttribute("href",`https://api.whatsapp.com/send/?phone=%2B9118002086633&text=DROP+${document.getElementById('channelNumberEntry').value}&app_absent=0`);
-            
-            document.getElementById('addLink').innerText=`ADD CHANNEL ${document.getElementById('channelNumberEntry').value}`;
-            document.getElementById('dropLink').innerText=`DROP CHANNEL ${document.getElementById('channelNumberEntry').value}`;
-        };
-    </script>
+    <script src="node.js" defer></script>
 </body>
 </html>
