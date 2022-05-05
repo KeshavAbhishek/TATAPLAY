@@ -25,20 +25,6 @@
             document.getElementById('addLink').innerText=`ADD CHANNEL ${document.getElementById('channelNumberEntry').value}`;
             document.getElementById('dropLink').innerText=`DROP CHANNEL ${document.getElementById('channelNumberEntry').value}`;
         };
-        if(window.innerWidth>700){
-            document.querySelector('body').style.visibility='collapse';
-        }
-        else{
-            document.querySelector('body').style.visibility='visible';
-        };
-        window.addEventListener('resize',()=>{
-            if(window.innerWidth>700){
-                document.querySelector('body').style.visibility='collapse';
-            }
-            else{
-                document.querySelector('body').style.visibility='visible';
-            };
-        });
     </script>
 </body>
 </html>
